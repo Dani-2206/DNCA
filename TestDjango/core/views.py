@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Colab
-from .forms import SugerenciasForm, creaSugerenciasForm
+from .forms import SugerenciasForm
 
 # Create your views here.
 def paginaprincipal(request):
@@ -48,3 +48,7 @@ def form_del_sugerencia(request,id):
     sugerencia = Colab.objects.get(rut=id)
     sugerencia.delete()
     return redirect('crud')
+
+
+def inicio(request):
+    return render(request, 'core/Iniciosesion.html')

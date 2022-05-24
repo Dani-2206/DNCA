@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import paginaprincipal, galeria, sugerencias, crud, form_mod_sugerencia, form_del_sugerencia
+from .views import paginaprincipal, galeria, sugerencias, crud, form_mod_sugerencia, form_del_sugerencia,inicio
 
 urlpatterns=[
-    path('', paginaprincipal, name="paginaprincipal"),
+    path('',inicio,name="inicio"),
+    path('paginaP/', paginaprincipal, name="paginaprincipal"),
     path('galeria/', galeria, name="galeria"),
     path('sugerencias/', sugerencias, name="sugerencias"),
     path('crud/', crud, name="crud"),

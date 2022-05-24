@@ -60,31 +60,26 @@
 <table class="table jumbotron" style="margin-left: 5px;" >
   <thead>
       <tr>
-          <th scope="col">Nombre completo</th>
-          <th scope="col">Rut</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Nombre Usuario</th>
           <th scope="col">Correo Electrónico</th>
           <th scope="col">Teléfono</th>
-          <th scope="col">Dirección</th>
-          <th scope="col">Pais</th>
           <th scope="col">Contraseña</th>
-          <th scope="col">Imagen</th>
-          <th scope="col">Opciones</th>
+          
                  
       </tr>
   </thead>
   <tbody>
-      {%for ve in every%}
+      {%for ve in SugerenciasForm%}
           <tr>
               <td>{{ve.nombre}}</td>
-              <td>{{ve.rut}}</td>
+              <td>{{ve.apellido}}</td>
+              <td>{{ve.nombre_u}}</td>
               <td>{{ve.email}}</td>
               <td>{{ve.telefono}}</td>
-              <td>{{ve.direccion}}</td>
-              <td>{{ve.pais}}</td>
               <td>{{ve.contraseña}}</td>
-              {%if ve.imagen%}
-              <td><img src="{{ve.imagen.url}}" alt="" width="80" height="80"></td>
-              {%endif%}
+
 
   
               <td><a href="{% url 'form_mod_sugerencia' ve.rut%}" class="btn btn-primary">Modificar</a>

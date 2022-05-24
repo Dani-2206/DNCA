@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {%load static%}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Estilos.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/estilos2.css'%}">
+    <link href="{% static 'css/bootstrap.min.css'%}" type="text/css" rel="stylesheet"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio session</title>
+</head>
+<body>
+    <div class="body"></div>
+    <div class="grad"></div>
+    <div class="header">
+        <div>DNAC<span></span></div>
+    </div>
+    <br>
+    <div class="login">
+            <input type="text" placeholder="username" name="user"><br>
+            <input type="password" placeholder="password" name="password"><br>
+            <div class="juntar"> 
+                <button class="botons" href="{% url 'paginaprincipal'%}"><span>Iniciar sesion</span></button>
+                <button class="botons"><span>Registrarse</span></button>
+            </div>
+    </div>
+</html>

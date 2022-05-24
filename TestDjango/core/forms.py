@@ -5,31 +5,38 @@ from .models import Colab
 class SugerenciasForm(ModelForm):
     class Meta:
         model = Colab
-        fields = ['rut','nombre','email','telefono','pais','direccion','contraseña','imagen']
+        fields = ['nombre_u','nombre','apellido','email','telefono','contraseña']
         labels={
-            'nombre':'Nombre Completo',
+            'nombre_u':'Nombre Usuario',
+            'nombre':'Nombre',
+            'apellido':'Apellido',
             'email':'Correo Electronico',
             'telefono':'Teléfono',
-            'direccion':'Direccion',
-            'pais':'Pais',
-            'contraseña':'Contraseña',
-            'imagen':'imagen'
+            'contraseña':'Contraseña'
         }
 
         widgets={
-            'rut': forms.TextInput(
+            'nombre_u': forms.TextInput(
                 attrs={
                     'class': 'controls',
-                    'id': 'rut',
-                    'name': 'rut',
-                    'placeholder': 'Rut'
+                    'name': 'nombre_u',
+                    'id': 'nombre_u',
+                    'placeholder': 'Nombre de usuario'
                 }
-            ),    
+            ),   
             'nombre': forms.TextInput(
                 attrs={
                     'class': 'controls',
                     'name': 'nombre',
                     'id': 'nombre',
+                    'placeholder': 'Nombre Completo'
+                }
+            ),
+           'apellido': forms.TextInput(
+                attrs={
+                    'class': 'controls',
+                    'name': 'apellido',
+                    'id': 'ap',
                     'placeholder': 'Nombre Completo'
                 }
             ),
@@ -48,23 +55,7 @@ class SugerenciasForm(ModelForm):
                     'name': 'telefono',
                     'placeholder': 'Número de contacto',
                 }
-            ),    
-            'pais': forms.TextInput(
-                attrs={
-                    'class': 'controls',
-                    'id': 'pais',
-                    'name': 'pais',
-                    'placeholder': 'Pais',
-                }
-            ),
-            'direccion': forms.TextInput(
-                attrs={
-                    'class': 'controls',
-                    'id': 'direccion',
-                    'name': 'direccion',
-                    'placeholder': 'Escriba aqui su Direccion',
-                }
-            ),
+            ),   
             'contraseña': forms.TextInput(
                 attrs={
                     'class': 'controls',
@@ -73,13 +64,9 @@ class SugerenciasForm(ModelForm):
                     'placeholder': 'Contraseña',
                 }
             ),
-            'imagen': forms.FileInput(
-            
-                
-            ),
         }
 
-
+'''
 
 class creaSugerenciasForm(ModelForm):
     class Meta:
@@ -157,4 +144,4 @@ class creaSugerenciasForm(ModelForm):
                 
             ),
         }
-
+'''
