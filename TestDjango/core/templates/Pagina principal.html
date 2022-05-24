@@ -1,0 +1,184 @@
+<!doctype html>
+<html>
+<head>
+  {%load static%}
+  <title>Página Principal</title> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link href="{% static 'css/bootstrap.min.css'%}" type="text/css" rel="stylesheet"> 
+  <link rel="stylesheet" type="text/css" href="{% static 'css/Estilos.css'%}">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script src="{% static 'js/main.js'%}" defer></script>
+  
+  
+  <script>
+
+    function modark(){
+    document.body.classList.toggle('dark');
+    document.getElementById('tarjetas').classList.toggle('cardd');
+    document.getElementById('tarjetas1').classList.toggle('cardd');
+    }    
+  </script>
+</head>
+<body>
+  {%load static%}
+  <nav class="navbar navbar-expand-sm navbar-light fixed-top " style="background-color: #000000">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <!-- logo -->
+    <a class="navbar-brand" href="#">
+      <img src="{% static 'img/OIP.jpg'%}" width="80" height="80" alt="">
+    </a>
+    
+    <!-- enlaces -->
+    <div class="collapse navbar-collapse" id="opciones">   
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'paginaprincipal'%}" style="color: rgb(0, 136, 255);">Inicio</a>
+        </li> 
+          <li class="nav-item ml-auto">
+          <a class="nav-link" href="{% url 'sugerencias'%}" style="color: rgb(0, 136, 255);">Crear Colaboradores</a>
+          </li>
+          <li class="nav-item ml-auto">
+            <a class="nav-link" href="{% url 'crud'%}" style="color: rgb(0, 136, 255);">Lista de Colaboradores</a>
+            </li>             
+      </ul>
+      <button class="switch navbar-nav ml-auto" id="switch" onclick="modark()"  >
+        <span1 style="width: 30px; height: 30px; line-height: 30px; background: none; display: block; color: #ffffff;"><i class="fas fa-sun"></i></span1>
+        /
+        <span2 style="width: 30px; height: 30px; line-height: 30px; background: none; display: block; color: grey;"><i class="fas fa-moon"></i></span2>
+      </button>
+     
+    </div>
+  </nav>
+<br><br><br><br><br>
+<div class="container-md" >
+  <div id="carousel1" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel1" data-slide-to="1"></li>
+      <li data-target="#carousel1" data-slide-to="2"></li>
+    </ol>
+
+    <!-- diapositivas -->
+    
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <br>
+        <img class="d-block w-100" src="{% static 'img/b.jpg'%}" width=100% alt="">
+          <div class="carousel-caption">
+            <h3>Noticias Nuevas</h3>
+          </div>
+      </div>
+      <div class="carousel-item">
+        <br>
+          <img class="d-block w-100" src="{% static 'img/c.jpg'%}" width=100% alt="">
+          <div class="carousel-caption">
+            <h3>Lo de Hoy</h3>
+          </div>
+      </div>
+      <div class="carousel-item">
+        <br>
+          <img class="d-block w-100" src="{% static 'img/d.jpg'%}" width=100% alt="">
+          <div class="carousel-caption">
+            <h3>Comunicate con nosotros</h3>
+          </div>
+      </div>
+    </div>
+
+    <!-- botones de desplazamiento a izquierda y derecha -->      
+    <a class="carousel-control-prev" href="#carousel1" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel1" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+    <br><br>
+
+<div class="center">   
+    <div class="row">       
+      <div class="col-md">        
+          <div class="card" id="tarjetas" name="tarjetass">           
+            <div class="card-body" ><br>
+                <h1 style="text-align: center;">Nuevas Noticias</h1><br> 
+              <p class="card-text" style="text-align: justify;"><strong>NTA-Corp</strong> Coronavirus: Toda la RM saldrá de cuarentena tras avance de tres últimas comunas y Minsal 
+                anuncia que este jueves informará los cambios al Plan Paso a Paso.</p>
+                <img class="d-block w-100" src="{% static 'img/a.jpg'%}" width=100% alt="">
+            </div>
+          </div>          
+      </div>
+    
+
+      <!-- implementando api-->  
+      <div class="col-sm-4">        
+        <div class="card" id="tarjetas1" name="tarjetass">
+          <div class="card-body" >
+            <h3 style="text-align: center;">Clima de ciudades</h>
+        <main>
+        <div class="search-form">
+          <form id="search-form">
+            <div class="searchbox">
+              <input type="text" autocomplete="off" placeholder="Buscar ciudad..." class="search" id="searchbox" />
+            </div>
+          </form>
+        </div>
+        <div class="weather-card" id="card">
+            <div class="city" id="city">Santiago, CL</div>
+            <div class="date" style="font-size: 1rem;" id="date">15/05/2021</div>
+            <p id="display-time"></p>
+            <div class="temperature">
+            <img src="{% static 'img/sol.png'%}" class="temp-img" id="temp-img" />
+            <div class="temp" id="temp">27c</div>
+          </div>
+          <div class="weather" id="weather" style="text-transform:uppercase;">Sol</div>
+          <div class="range" style="font-size: 1.5rem;" id="range">25c / 35c</div>
+        </div></div></div>   
+    </main>
+    </div></div>
+</div></div>
+<br><br>
+
+  <footer class="footer" >
+    <div class="container" >
+      <div class="row">
+        <div class="footer-col">
+            <h4>Integrante</h4>
+            <ul>
+              <li><a href="#">Asael Muñoz</a></li>
+            </ul>
+        </div> 
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="#">NTA-Corp@gmail.com</a></li>
+          </ul>
+      </div> 
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-links">
+  
+          <a href="https://www.facebook.com/ola.owo.77312" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/serv_if_04/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/Servici72488014" target="_blank"><i class="fab fa-twitter"></i></a>
+          
+        </div>
+    </div>
+    <div class="text-center text-white p-3" style="background-color:  #000000">
+      © 2020 Copyright:
+      <a class="text-white" >NTA-Corp.cl</a>
+    </div>
+  </div>  
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+</body>
+</html>

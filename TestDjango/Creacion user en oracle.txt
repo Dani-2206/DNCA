@@ -1,0 +1,4 @@
+alter session set "_ORACLE_SCRIPT"=true;
+create user exp3 identified by experiencia3;
+grant connect, resource to exp3;
+alter user exp3 default tablespace users quota unlimited on users;
