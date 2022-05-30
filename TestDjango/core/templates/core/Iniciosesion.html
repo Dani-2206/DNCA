@@ -22,9 +22,9 @@
         <form method="POST">
             {% csrf_token %}
             <label>Nombre Usuario</label>
-            <input type="text" placeholder="Akiles_brinco" name="username"><br>
+            {{form.username}}
             <label>Contraseña</label>
-            <input type="password" placeholder="Contraseña" name="password"><br>
+            {{form.password}}
             <div class="juntar">
                 <button class="submit" ><span>Iniciar sesion</span></button>
             </div>

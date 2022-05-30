@@ -61,11 +61,10 @@
   <thead>
       <tr>
           <th scope="col">Nombre</th>
-          <th scope="col">Apellido</th>
-          <th scope="col">Nombre Usuario</th>
-          <th scope="col">Correo Electrónico</th>
-          <th scope="col">Teléfono</th>
-          <th scope="col">Contraseña</th>
+          <th scope="col">ID</th>
+          <th scope="col">Foto</th>
+          <th scope="col">Descripcion</th>
+
           
                  
       </tr>
@@ -74,11 +73,12 @@
       {%for ve in SugerenciasForm%}
           <tr>
               <td>{{ve.nombre}}</td>
-              <td>{{ve.apellido}}</td>
-              <td>{{ve.nombre_u}}</td>
-              <td>{{ve.email}}</td>
-              <td>{{ve.telefono}}</td>
-              <td>{{ve.contraseña}}</td>
+              <td>{{ve.productoid}</td>
+              {%if ve.imagen%}
+              <td><img src="{{ve.imagen.url}}" alt="" width="80" height="80"></td>
+              {%endif%}
+              <td>{{ve.descripcion}}</td>
+
 
 
   
