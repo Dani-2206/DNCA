@@ -44,8 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'usuarios'
 ]
-'''usuarios'''
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -130,10 +131,9 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-'''AUTH_USER_MODEL= 'usuarios.Usuario'''
+AUTH_USER_MODEL= 'usuarios.Usuario'
 
-LOGIN_REDIRECT_URL= reverse_lazy('index')
-LOGOUT_REDIRECT_URL = reverse_lazy('login')
+
 
 
 
