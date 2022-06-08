@@ -1,4 +1,5 @@
 from audioop import reverse
+from urllib import request
 
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
@@ -8,6 +9,13 @@ from django.contrib.auth import login,logout
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_protect
+from django.views.generic import CreateView,ListView
+
+from .forms import Formulario
+from .models import Usuario
+ 
+
+
 
 
 from .forms import formulariologin
@@ -31,4 +39,20 @@ class Login(FormView):
 def logoutU(request):
     logout(request)
     return HttpResponseRedirect('/accounts/login/')
+
+
+class ListadoUsuario(ListView):
+    model=Usuario
+    template_name = 'listar_usuario.html'
+    def get_queryset(self):
+        return self.model.objects.filter(usuario_activo=True)
+
+
+
+
+class crearusuario(CreateView):
+    model = Usuario
+    form_class= Formulario
+    template_name = 'registro.html'
+    success_url = reverse_lazy('usuarios:listar_usuario')
 

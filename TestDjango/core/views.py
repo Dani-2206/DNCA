@@ -56,3 +56,6 @@ def form_del_sugerencia(request,id):
 
 def inicio(request):
     return render(request,'core/Iniciosesion.html')
+
+
+

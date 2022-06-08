@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser,BaseUserManager
+from django.contrib.auth.models import PermissionsMixin
 
 
 class UsuarioManager(BaseUserManager):
@@ -64,7 +65,7 @@ class Usuario(AbstractBaseUser):
         return True
 
            
-    def has_nodule_perms(self,app_label):
+    def has_module_perms(self,app_label):
         return True
     
     @property

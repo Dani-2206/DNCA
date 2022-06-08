@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+  {%load static%}
+  <title>Crud</title> 
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <link href="{% static 'css/bootstrap.min.css'%}" type="text/css" rel="stylesheet"> 
+  <link rel="stylesheet" type="text/css" href="{% static 'css/Estilos.css'%}">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script src="{% static 'js/main.js'%}" defer></script>
+  
+  
+  <script>
+
+    function modark(){
+    document.body.classList.toggle('dark');
+    document.getElementById('tarjetas').classList.toggle('cardd');
+    document.getElementById('tarjetas1').classList.toggle('cardd');
+    }    
+  </script>
+</head>
+<body>
+  {%load static%}
+  <nav class="navbar navbar-expand-sm navbar-light fixed-top " style="background-color: #000000">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <!-- logo -->
+    <a class="navbar-brand" href="#">
+      <img src="{% static 'img/OIP.jpg'%}" width="80" height="80" alt="">
+    </a>
+    
+    <!-- enlaces -->
+    <div class="collapse navbar-collapse" id="opciones">   
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="color: rgb(0, 136, 255);">Inicio</a>
+        </li> 
+          <li class="nav-item">
+          <a class="nav-link" href="{% url 'sugerencias'%}" style="color: rgb(0, 136, 255);"> Crear Colaboradores</a>
+          </li> 
+          <li class="nav-item ml-auto">
+            <a class="nav-link" href="{% url 'crud'%}" style="color: rgb(0, 136, 255);">Lista de Colaboradores</a>
+            </li>             
+      </ul>
+      <button class="switch navbar-nav ml-auto" id="switch" onclick="modark()"  >
+        <span1 style="width: 30px; height: 30px; line-height: 30px; background: none; display: block; color: #ffffff;"><i class="fas fa-sun"></i></span1>
+        /
+        <span2 style="width: 30px; height: 30px; line-height: 30px; background: none; display: block; color: grey;"><i class="fas fa-moon"></i></span2>
+      </button>
+    </div>-
+    </nav>
+<br><br><br><br><br>
+
+<div class="row" style="margin-left: 10px;">
+  <h1>Mostrando Colaboradores</h1>
+</div>
+<table class="table jumbotron" style="margin-left: 5px;" >
+  <thead>
+      <tr>
+          <th scope="col">Username</th>
+          <th scope="col">Nombres</th>
+          <th scope="col">apellidos</th>
+          <th scope="col">Telefono</th>
+          <th scope="col">Email</th>
+   
+
+
+          
+                 
+      </tr>
+  </thead>
+  <tbody>
+      {%for ve in object_list%}
+          <tr>
+              <td>{{ve.username}}</td>
+              <td>{{ve.nombres}}</td>
+              <td>{{ve.apellidos}}</td>
+              <td>{{ve.telefono}}</td>
+              <td>{{ve.email}}</td>
+             
+              <td><a href="#" class="btn btn-primary">Modificar</a>
+              <a href="#" class="btn btn-danger">Eliminar</a></td>-
+          </tr>
+      {%endfor%}
+  </tbody>
+</table>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <footer class="footer" >
+    <div class="container" >
+      <div class="row">
+        <div class="footer-col">
+            <h4>Integrante</h4>
+            <ul>
+              <li><a href="#">Asael Muñoz</a></li>
+            </ul>
+        </div> 
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="#">NTA-Corp@gmail.com</a></li>
+          </ul>
+      </div> 
+      <div class="footer-col">
+        <h4>Redes Sociales</h4>
+        <div class="social-links">
+  
+          <a href="https://www.facebook.com/ola.owo.77312" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/serv_if_04/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com/Servici72488014" target="_blank"><i class="fab fa-twitter"></i></a>
+          
+        </div>
+    </div>
+    <div class="text-center text-white p-3" style="background-color:  #000000">
+      © 2020 Copyright:
+      <a class="text-white" >NTA-Corp.cl</a>
+    </div>
+  </div>  
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+</body>
+</html>
