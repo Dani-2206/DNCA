@@ -4,19 +4,17 @@ from django.urls import path, include
 from django.conf import settings 
 from django.conf.urls.static import static
 from django.contrib.auth.decorators import login_required
-from core.views import paginaprincipal
 
-from usuarios.views import Login,logoutU
 
+from usuarios.views import Login,logoutU,paginaprincipal
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('paginas/', include('core.urls')),
     path('usuarios/',include('usuarios.urls')), 
-     
-    path('',login_required(paginaprincipal),name="index"),
+    path('',paginaprincipal.as_view(),name="index"),
     path('accounts/login/',Login.as_view(),name='login'),
-    path('logout',login_required(logoutU),name='logout')
+    path('logout',login_required(logoutU),name='logout'),
 
 
 ]

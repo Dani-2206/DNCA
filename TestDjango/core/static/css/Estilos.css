@@ -340,3 +340,16 @@ p {
     margin-bottom: 1rem;
   }
 
+
+
+.bodyl{
+    font-family:"Segoe UI","consolas";
+}
+.container{
+  flex-direction:row , row-reverse ,column , column-reverse;
+}
+                                                 I
+.display-1{
+    background:#1e96fc;
+    color:white;
+}

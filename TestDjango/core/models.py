@@ -6,6 +6,7 @@ class Colab(models.Model):
     nombre=models.CharField(max_length=50, verbose_name='nombre producto')
     imagen=models.ImageField(upload_to='usuario',blank=True , null=True)
     descripcion=models.CharField(max_length=50, verbose_name='descripcion')
+    precio = models.IntegerField(verbose_name='Valor del profucto',blank=True , null=True)
 
     def __str__(self):
         return(self.pais)

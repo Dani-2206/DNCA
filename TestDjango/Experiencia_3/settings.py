@@ -71,6 +71,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'core.context_processors.total_carrito',
             ],
         },
     },
@@ -88,7 +89,7 @@ DATABASES={
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'personas',
         'USER': 'root',
-        'PASSWORD':'',
+        'PASSWORD':'123',
         'HOST': 'localhost',
         'PORT': '3306'
 

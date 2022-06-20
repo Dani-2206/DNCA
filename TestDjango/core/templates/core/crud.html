@@ -53,7 +53,7 @@
     </div>-
     </nav>
 <br><br><br><br><br>
-
+{% if request.user.is_staff %}
 <div class="row" style="margin-left: 10px;">
   <h1>Mostrando Colaboradores</h1>
 </div>
@@ -64,30 +64,33 @@
           <th scope="col">ID</th>
           <th scope="col">Foto</th>
           <th scope="col">Descripcion</th>
+          <th scope="col">Precio</th>
 
           
                  
       </tr>
   </thead>
   <tbody>
-      {%for ve in SugerenciasForm%}
+      {%for ve in every%}
           <tr>
               <td>{{ve.nombre}}</td>
-              <td>{{ve.productoid}</td>
+              <td>{{ve.productoid}}</td>
               {%if ve.imagen%}
               <td><img src="{{ve.imagen.url}}" alt="" width="80" height="80"></td>
               {%endif%}
               <td>{{ve.descripcion}}</td>
+              <td>{{ve.precio}}</td>
 
 
 
   
-              <td><a href="{% url 'form_mod_sugerencia' ve.rut%}" class="btn btn-primary">Modificar</a>
-              <a href="{% url 'form_del_sugerencia' ve.rut%}" class="btn btn-danger">Eliminar</a></td>
+              <td><a href="{% url 'form_mod_sugerencia' ve.productoid%}" class="btn btn-primary">Modificar</a>
+              <a href="{% url 'form_del_sugerencia' ve.productoid%}" class="btn btn-danger">Eliminar</a></td>
           </tr>
       {%endfor%}
   </tbody>
 </table>
+{% endif%}
   </div>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <footer class="footer" >
@@ -97,6 +100,9 @@
             <h4>Integrante</h4>
             <ul>
               <li><a href="#">Asael Muñoz</a></li>
+              <li><a href="#">Daniel Landero</a></li>
+              <li><a href="#">Nicolas Prieto</a></li>
+              <li><a href="#">Cristobal Poblete</a></li>
             </ul>
         </div> 
         <div class="footer-col">

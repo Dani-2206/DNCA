@@ -1,10 +1,21 @@
 from django.shortcuts import render, redirect
 from .models import Colab
+
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .mixins import superusuario
+
 from .forms import SugerenciasForm
+
+from .models import Colab
+
+from .carrito import Carrito
 
 
 
 # Create your views here.
+
+
+
 def paginaprincipal(request):
     return render(request, 'Pagina principal.html')
 
@@ -56,6 +67,49 @@ def form_del_sugerencia(request,id):
 
 def inicio(request):
     return render(request,'core/Iniciosesion.html')
+
+
+
+
+
+
+
+#carrito en si
+
+def tienda(request):
+    
+    productos = Colab.objects.all()
+    return render(request, "core/tienda.html", {'productos':productos})
+
+def agregarProducto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Colab.objects.get(productoid=producto_id)
+    carrito.agregar(producto)
+    return redirect("carrito")
+
+    
+def eliminarProducto(request,producto_id):
+    carrito = Carrito(request)
+    producto = Colab.objects.get(productoid=producto_id)
+    carrito.eliminar( producto)
+    return redirect('carrito')
+
+def restarProducto(request,producto_id):
+    carrito = Carrito(request)
+    producto = Colab.objects.get(productoid=producto_id)
+    carrito.restar( producto)
+    return redirect('carrito')
+
+def limpiarCarrito(request):
+    carrito = Carrito(request)
+    carrito.limpiar()
+    return redirect('carrito')
+
+
+def catalogo(request):
+    sugerencia=Colab.objects.all()
+    return render(request, 'core/catalogo.html', context={'every':sugerencia})
+
 
 
 

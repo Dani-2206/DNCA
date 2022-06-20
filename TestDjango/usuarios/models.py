@@ -59,7 +59,7 @@ class Usuario(AbstractBaseUser):
                                
 
     def __str__(self):
-        return f'{self.username}'
+        return self.username 
 
     def has_perm(self,perm,obj = None):
         return True

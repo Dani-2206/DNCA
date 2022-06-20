@@ -35,25 +35,17 @@
     <!-- enlaces -->
     <div class="collapse navbar-collapse" id="opciones">   
       <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#" style="color: rgb(0, 136, 255);">Inicio</a>
-          </li> 
-          {% if request.user.is_staff %}
+        <li class="nav-item">
+          <a class="nav-link" href="#" style="color: rgb(0, 136, 255);">Inicio</a>
+        </li> 
           <li class="nav-item ml-auto">
-            <a class="nav-link" href="{% url 'sugerencias'%}" style="color: rgb(0, 136, 255);">Crear Colaboradores</a>
+            <a class="nav-link" href="{% url 'sugerencias' %}" style="color: rgb(0, 136, 255);">Crear Colaboradores</a>
           </li>
           <li class="nav-item ml-auto">
             <a class="nav-link" href="{% url 'crud'%}" style="color: rgb(0, 136, 255);">Lista de Colaboradores</a>
           </li>  
-          {% endif%}
           <li class="nav-item ml-auto">
             <a class="nav-link" href="{% url 'logout'%}" style="color: rgb(0, 136, 255);">salir</a>
-          </li>  
-          <li class="nav-item ml-auto">
-            <a class="nav-link" href="{% url 'carrito'%}" style="color: rgb(0, 136, 255);">carrito</a>
-          </li>  
-          <li class="nav-item ml-auto">
-            <a class="nav-link" href="{% url 'catalogo'%}" style="color: rgb(0, 136, 255);">catalogo</a>
           </li>  
 
       </ul>
@@ -125,10 +117,9 @@
           <div class="card" id="tarjetas" name="tarjetass">           
             <div class="card-body" ><br>
                 <h1 style="text-align: center;">Nuevas Noticias</h1><br> 
-
-                <p class="card-text">Aumento del valor de las tarjetas graficas debido a la guerra de ucrania vs rusia</p>
-            
-                <img class="d-block w-100" src="{% static 'img/abc.jpg'%}" width=100% alt="">
+              <p class="card-text" style="text-align: justify;"><strong>NTA-Corp</strong> Coronavirus: Toda la RM saldrá de cuarentena tras avance de tres últimas comunas y Minsal 
+                anuncia que este jueves informará los cambios al Plan Paso a Paso.</p>
+                <img class="d-block w-100" src="{% static 'img/a.jpg'%}" width=100% alt="">
             </div>
           </div>          
       </div>
@@ -174,9 +165,6 @@
             <h4>Integrante</h4>
             <ul>
               <li><a href="#">Asael Muñoz</a></li>
-              <li><a href="#">Daniel Landero</a></li>
-              <li><a href="#">Nicolas Prieto</a></li>
-              <li><a href="#">Cristobal Poblete</a></li>
             </ul>
         </div> 
         <div class="footer-col">

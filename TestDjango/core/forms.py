@@ -6,12 +6,13 @@ from .models import Colab
 class SugerenciasForm(ModelForm):
     class Meta:
         model = Colab
-        fields = ['productoid','nombre','imagen','descripcion']
+        fields = ['productoid','nombre','imagen','descripcion','precio']
         labels={
-            'productoid':'Ingrese el id',
-            'nombre':'Nombre Completo',
+            'productoid':'Ingrese el id del producto',
+            'nombre':'Nombre del producto',
             'imagen':'imagen',
-            'descripcion':'descripcion'
+            'descripcion':'descripcion',
+            'precio':'ingrese el precio del producto'
         }
 
         widgets={
@@ -43,5 +44,14 @@ class SugerenciasForm(ModelForm):
                     'placeholder': 'descripcion'
                 }
             ),  
+            'precio': forms.TextInput(
+                attrs={
+                    'class': 'controls',
+                    'id': 'precio',
+                    'name': 'precio',
+                    'placeholder': '1000'
+                }
+
+            )
         }
 
