@@ -29,15 +29,13 @@
     
     <!-- logo -->
     <a class="navbar-brand" href="#">
-      <img src="{% static 'img/OIP.jpg'%}" width="80" height="80" alt="">
+      <img src="{% static 'img/OIP.jpg'%}" width="80" height="80" alt="" href="{% url 'index'%}">
     </a>
     
     <!-- enlaces -->
     <div class="collapse navbar-collapse" id="opciones">   
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#" style="color: rgb(0, 136, 255);">Inicio</a>
-        </li> 
+
           <li class="nav-item">
           <a class="nav-link" href="{% url 'sugerencias'%}" style="color: rgb(0, 136, 255);"> Crear Colaboradores</a>
           </li> 

@@ -9,7 +9,7 @@ class Colab(models.Model):
     precio = models.IntegerField(verbose_name='Valor del profucto',blank=True , null=True)
 
     def __str__(self):
-        return(self.pais)
+        return(self.nombre)
 
 
 

@@ -58,7 +58,7 @@ class crearusuario(CreateView):
     model = Usuario
     form_class= Formulario
     template_name = 'registro.html'
-    success_url = reverse_lazy('usuarios:listar_usuario')
+    success_url = reverse_lazy('login')
 
 
 
