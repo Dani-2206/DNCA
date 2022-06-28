@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from .models import Empleados
 from .forms import form_Empleados
 
-def sugerencias(request):
+def ingresar(request):
     if request.method=='GET':
         formulario=form_Empleados()
         contexto={
@@ -15,13 +15,13 @@ def sugerencias(request):
         }
         if formulario.is_valid():
             formulario.save()
-            return redirect('crud')
+            return redirect('crude')
 
-    return render(request, 'core/ingresar_e.html', {'formulario':formulario})
+    return render(request, 'ingresar_e.html', {'formulario':formulario})
 
 def crud(request):
         sugerencia=Empleados.objects.all()
-        return render(request, 'templates/ver_e.html', context={'every':sugerencia})
+        return render(request, 'ver_e.html', context={'every':sugerencia})
 
         
 
@@ -35,11 +35,11 @@ def form_mod_sugerencia(request,id):
         formulario = form_Empleados(data=request.POST, instance = sugerencia, files=request.FILES)
         if formulario.is_valid: 
             formulario.save()           #permite actualizar la info del objeto encontrado
-            return redirect('crud')
-    return render(request, 'templates/mod_e.html', datos)
+            return redirect('crude')
+    return render(request, 'mod_e.html', datos)
 
 
-def form_del_sugerencia(request,id):
+def form_del_sugerencia(request,id): 
     sugerencia = Empleados.objects.get(rut=id)
     sugerencia.delete()
-    return redirect('crud')
+    return redirect('crude')

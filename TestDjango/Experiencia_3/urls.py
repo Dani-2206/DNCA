@@ -15,6 +15,7 @@ urlpatterns = [
     path('',paginaprincipal.as_view(),name="index"),
     path('accounts/login/',Login.as_view(),name='login'),
     path('logout',login_required(logoutU),name='logout'),
+    path('empleados/', include('empleados.urls')),
 
 
 ]

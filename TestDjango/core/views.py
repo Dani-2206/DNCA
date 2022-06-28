@@ -37,16 +37,16 @@ def sugerencias(request):
             formulario.save()
             return redirect('crud')
 
-    return render(request, 'core/Sugerencias.html', {'formulario':formulario})
+    return render(request, 'core/Sugerencias.html', {'form':formulario})
 
 def crud(request):
         sugerencia=Colab.objects.all()
-        return render(request, 'core/crud.html', context={'every':sugerencia})
+        return render(request, 'core/crud.html', context={'productos':sugerencia})
 
         
 
 def form_mod_sugerencia(request,id):
-    sugerencia = Colab.objects.get(rut=id)
+    sugerencia = Colab.objects.get(productoid=id)
 
     datos ={
         'form': SugerenciasForm(instance=sugerencia)
@@ -60,7 +60,7 @@ def form_mod_sugerencia(request,id):
 
 
 def form_del_sugerencia(request,id):
-    sugerencia = Colab.objects.get(rut=id)
+    sugerencia = Colab.objects.get(productoid=id)
     sugerencia.delete()
     return redirect('crud')
 

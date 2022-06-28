@@ -99,7 +99,6 @@
 
 </head>
 <body>
-  {%load static%}
     <video sourse src="{% static 'video/noti.mp4'%}" autoplay loop></video>
     <nav class="navbar navbar-expand-sm navbar-light fixed-top " style="background-color: #000000;">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
@@ -112,13 +111,18 @@
 
         <div class="collapse navbar-collapse" id="opciones">   
         <ul class="navbar-nav">
-
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'sugerencias'%}" style="color: rgb(0, 136, 255);">Crear Colaboradores</a>
-            </li>   
-            <li class="nav-item ml-auto">
-              <a class="nav-link" href="{% url 'crud'%}" style="color: rgb(0, 136, 255);">Lista de Colaboradores</a>
-              </li>         
+            <a class="nav-link" href="{% url 'index'%}" style="color: aliceblue;">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'sugerencias'%}" style="color: rgb(0, 136, 255);">Crear Productos</a>
+          </li>   
+          <li class="nav-item ml-auto">
+            <a class="nav-link" href="{% url 'crud'%}" style="color: rgb(0, 136, 255);">Lista de Productos</a>
+          </li>
+          <li class="nav-item ml-auto">
+            <a class="nav-link" href="{% url 'logout'%}" style="color: rgb(0, 136, 255);">Salir</a>
+          </li>         
         </ul>
         <button class="switch navbar-nav ml-auto" id="switch" onclick="modark()"  >
           <span1 style="width: 30px; height: 30px; line-height: 30px; background: none; display: block; color: #ffffff;"><i class="fas fa-sun"></i></span1>
@@ -137,7 +141,7 @@
                 <form method="POST" action="#" id="formulario" enctype="multipart/form-data">
                     {%csrf_token%}            <!--graba, actualiza, controla la integridad de los datos-->
                     <div class="form-group">
-                        {{formulario}}
+                        {{form}}
                     </div>               
                         <div class="form-group">
                         <input type="submit" class="btn btn-primary" id="enviar" value="Enviar"> 

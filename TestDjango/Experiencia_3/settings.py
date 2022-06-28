@@ -84,57 +84,19 @@ WSGI_APPLICATION = 'Experiencia_3.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-"""
+
 DATABASES={
     'default':{
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'personas',
         'USER': 'root',
-        'PASSWORD':'123',
+        'PASSWORD':'',
         'HOST': 'localhost',
         'PORT': '3306'
 
     }
-}"""
-
-
-
-DATABASES={
-    'default':{},
-
-    'users_db':{
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'personas',
-        'USER': 'root',
-        'PASSWORD':'123',
-        'HOST': 'localhost',
-        'PORT': '3306'
-    },
-
-    'products_db':{
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'productos',
-        'USER': 'root',
-        'PASSWORD':'123',
-        'HOST': 'localhost',
-        'PORT': '3306'
-    },    
-    'empleados_db':{
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'empleados',
-        'USER': 'root',
-        'PASSWORD':'123',
-        'HOST': 'localhost',
-        'PORT': '3306'
-    },
-
 }
 
-DATABASE_ROUTERS = [
-    'usuarios.routers.usuarios',
-    'core.routers.core',
-    'empleados.routers.empleados',
-]
 
 '''
 DATABASE_ROUTERS = [
