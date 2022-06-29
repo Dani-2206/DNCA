@@ -115,13 +115,13 @@
             <a class="nav-link" href="{% url 'index'%}" style="color: aliceblue;">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'sugerencias'%}" style="color: rgb(0, 136, 255);">Crear Productos</a>
+            <a class="nav-link" href="{% url 'sugerenciase'%}" style="color: rgb(0, 136, 255);">Añadir Empleados</a>
           </li>   
           <li class="nav-item ml-auto">
-            <a class="nav-link" href="{% url 'crud'%}" style="color: rgb(0, 136, 255);">Lista de Productos</a>
+            <a class="nav-link" href="{% url 'crude'%}" style="color: rgb(0, 136, 255);">Lista de Empleados</a>
           </li>
           <li class="nav-item ml-auto">
-            <a class="nav-link" href="{% url 'logout'%}" style="color: rgb(0, 136, 255);">Salir</a>
+            <a class="nav-link" href="{% url 'logout'%}" style="color: rgb(0, 136, 255);">Cerrar Sesion</a>
           </li>         
         </ul>
         <button class="switch navbar-nav ml-auto" id="switch" onclick="modark()"  >
@@ -135,7 +135,7 @@
       <!--formulario-->
       <div class="form-login" style="height: 900px;">
         <div class="row">
-            <h5 style="color: #ffffff; ">Creando Producto</h5>
+            <h5 style="color: #ffffff; ">Registrando Empleado</h5>
         </div>
         <div class="row">
                 <form method="POST" action="#" id="formulario" enctype="multipart/form-data">
@@ -147,9 +147,10 @@
                         <input type="submit" class="btn btn-primary" id="enviar" value="Enviar"> 
                     </div>
                 </form>
+               
         </div>
     </div> 
-    <br><br><br>
+    <br><br><br><br><br><br><br><br>
     <footer class="footer" >
         <div class="container" >
           <div class="row">

@@ -2,13 +2,20 @@
 <html>
 <head>
   {%load static%}
-  <title>Página Principal</title> 
+  <title>Acerca De</title> 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <link href="{% static 'css/bootstrap.min.css'%}" type="text/css" rel="stylesheet"> 
   <link rel="stylesheet" type="text/css" href="{% static 'css/Estilos.css'%}">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <script src="{% static 'js/main.js'%}" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
   
   <script>
@@ -19,9 +26,9 @@
     document.getElementById('tarjetas1').classList.toggle('cardd');
     }    
   </script>
-</head>
+</head> 
 <body>
-  {%load static%}
+  <video sourse src="{% static 'video/noti.mp4'%}" autoplay loop></video>
   <nav class="navbar navbar-expand-sm navbar-light fixed-top " style="background-color: #000000">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#opciones">
       <span class="navbar-toggler-icon"></span>
@@ -29,7 +36,7 @@
     
     <!-- logo -->
     <a class="navbar-brand" href="#">
-      <img src="{% static 'img/OIP.jpg'%}" width="80" height="80" alt="" href="{% url 'index'%}">
+      <img src="{% static 'img/OIP.jpg'%}" width="40" height="40" alt="" href="{% url 'index'%}">
     </a>
     
     <!-- enlaces -->
@@ -40,7 +47,7 @@
           </li> 
           {% if request.user.is_staff %}
           <li class="nav-item ml-auto">
-            <a class="nav-link" href="{% url 'sugerencias'%}" style="color: rgb(0, 136, 255);">Crear Productos</a>
+            <a class="nav-link" href="{% url 'sugerencias'%}" style="color: rgb(0, 136, 255);">Añadir Productos</a>
           </li>
 
           <li class="nav-item ml-auto">
@@ -48,10 +55,10 @@
           </li>  
           {% endif%} 
           <li class="nav-item ml-auto">
-            <a class="nav-link" href="{% url 'carrito'%}" style="color: rgb(0, 136, 255);">Carrito</a>
+            <a class="nav-link" href="{% url 'carrito'%}" style="color: rgb(0, 136, 255);">Carrito de Compras</a>
           </li>
           <li class="nav-item ml-auto">
-            <a class="nav-link" href="{% url 'logout'%}" style="color: rgb(0, 136, 255);">Salir</a>
+            <a class="nav-link" href="{% url 'logout'%}" style="color: rgb(0, 136, 255);">Cerrar Sesion</a>
           </li> 
           
 
@@ -66,23 +73,124 @@
   </nav>
 <br><br><br><br><br>
 
-{%for ve in every%}
-
-
-<div class="card" style="width: 18rem;">
-    {%if ve.imagen%}
-    <img src="{{ve.imagen.url}}" alt="" width="80" height="80"></td>
-    {%endif%}
-    
-    <div class="card-body">
-      <h5 class="card-title">{{ve.nombre}}</h5>
-      <p class="card-text">{{ve.descripcion}}</p>
-      <a href="{% url 'carrito' %}" class="btn btn-primary">ir al carrito</a>
-    </div>
+<div class="contenedor"> 
+  <img src="{% static 'img/informatica123.jpg'  %}"  width="100%" height="100%" alt="">
+  <div class="centrado"><h1 style="left: 40%;">ACERDA DE NOSOTROS</h1></div>
   </div>
-</div>
-{%endfor%}
-<br><br>
+  
+  
+  
+  
+   <div class="container"><br><br><br>     
+    
+  
+      <br><br>
+      <div class="center">   
+        <div class="row">       
+          <div class="col-md">        
+              <div class="card" id="tarjetas" name="tarjetass">
+                <div class="container">
+                <figure>              
+                <img class="card-img-top" src="{% static 'img/hardware.jpg'%}"  width="480" height="360">
+                <div class="capa">
+                  <h3>Información y venta</h3>
+                  <p>Nosotros como empresa queremos comprometernos a poder entregar a nuestros usuarios toda la información posible sobre todo lo que relacione al hardware. </p>
+                </div>
+                </figure><br>            
+                <div class="card-body" id="tarjetas2" name="tarjetass">
+                  <h2 class="card-title">Hardware</h2>
+                  <p class="card-text">Información, venta y noticias sobre hardware.</p>
+                </div>
+              </div>          
+          </div>
+        </div>
+    
+          <div class="col-md">        
+            <div class="card" style="margin-top: 45%;" id="tarjetas2" name="tarjetass">
+              <div class="container">
+              <figure>
+              <img class="card-img-bottom" src="{% static 'img/hardware-2.jpg'%}"  width="480" height="360">  
+              <div class="capa">
+                <h3>Noticias</h3>
+                <p>Queremos proveer todas las noticias de último momento relacionadas al hardware de todo tipo. </p>
+              </div>    
+              </figure>                 
+            </div>          
+        </div>
+      </div>
+    </div>
+    <br><br><br><br><br>
+      <div class="center">   
+        <div class="row">       
+          <div class="col-md">        
+              <div class="card" id="tarjetas3" name="tarjetass">
+                <div class="container">
+                  <figure>
+                <img class="card-img-top" src="{% static 'img/desarrollo_software.jpg'%}"  width="480" height="360">
+                <div class="capa">
+                  <h3>Tutoriales y descargas</h3>
+                  <p>Entregaremos tutoriales de gran calidad para la adquisición de software actualizado y para cualquier tipo de trabajo. </p>
+                </div>
+                </figure>          
+                <div class="card-body">
+                  <h2 class="card-title">Software</h2>
+                  <p class="card-text">Tutoriales, descargas, noticias y todo sobre software.</p>
+                </div>
+              </div>          
+          </div>
+        </div>
+    
+          <div class="col-md">        
+            <div class="card" style="margin-top: 45%;" id="tarjetas4" name="tarjetass">
+              <div class="container">
+              <figure>
+              <img class="card-img-bottom" src="{% static 'img/Software_en_la_Nube.original.jpg'%}" width="480" height="360">
+              <div class="capa">
+                <h3>Noticias</h3>
+                <p>Las mejores noticias del momento se encontrarán disponibles en nuestra página para propagar la información verídica y de calidad. </p>
+              </div>
+              </figure>                        
+            </div>          
+        </div>
+      </div>
+    </div>
+      <br><br><br><br><br>
+      <div class="center">   
+        <div class="row">       
+          <div class="col-md">        
+              <div class="card" id="tarjetas5" name="tarjetass">
+                <div class="container">
+                <figure>
+                <img class="card-img-top" src="{% static 'img/servicios informaticos.jpg'%}" width="480" height="360">
+                <div class="capa">
+                  <h3>Soluciones y ayuda</h3>
+                  <p>Procuramos entregar un buen servicio que entregue soluciones de inmediato o a corto plazo siempre ayudando al cliente.</p> 
+                </div>
+                </figure>          
+                <div class="card-body">
+                  <h2 class="card-title">Servicios Informáticos</h2>
+                  <p class="card-text"> Todo tipo de servicios y utilidades relacionados a la informática.</p>
+                </div>
+              </div>          
+          </div>
+        </div>
+    
+          <div class="col-md">        
+            <div class="card" style="margin-top: 45%;" id="tarjetas6" name="tarjetass">
+              <div class="container">
+              <figure>
+              <img class="card-img-bottom" src="{% static 'img/que-es-un-servidor-en-la-informatica-5.jpg'%}" width="480" height="360">
+              <div class="capa">
+                <h3>Utilidades</h3>
+                <p>Tips y utilidades que te brinden ayuda y faciliten tu experiencia.</p>
+              </div>
+              </figure>                        
+            </div>          
+        </div>
+      </div>
+    </div>
+
+<br><br><br>
 
   <footer class="footer" >
     <div class="container" >

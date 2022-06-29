@@ -9,7 +9,7 @@ def ingresar(request):
             'formulario':formulario
         }
     else:
-        formulario=Empleados(request.POST, files=request.FILES)
+        formulario=form_Empleados(request.POST, files=request.FILES)
         contexto={
             'formulario':formulario
         }
@@ -21,11 +21,11 @@ def ingresar(request):
 
 def crud(request):
         sugerencia=Empleados.objects.all()
-        return render(request, 'ver_e.html', context={'every':sugerencia})
+        return render(request, 'ver_e.html', context={'empleados':sugerencia})
 
         
 
-def form_mod_sugerencia(request,id):
+def modificar(request,id):
     sugerencia = Empleados.objects.get(rut=id)
 
     datos ={
@@ -39,7 +39,7 @@ def form_mod_sugerencia(request,id):
     return render(request, 'mod_e.html', datos)
 
 
-def form_del_sugerencia(request,id): 
+def eliminar(request,id): 
     sugerencia = Empleados.objects.get(rut=id)
     sugerencia.delete()
     return redirect('crude')

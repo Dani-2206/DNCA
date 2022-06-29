@@ -5,14 +5,15 @@ from .models import Empleados
 class form_Empleados(forms.ModelForm):
     class Meta:
         model = Empleados
-        fields =['rut','nombre','apellido','email','telefono','cargo']
+        fields =['rut','nombre','apellido','email','telefono','cargo','sueldo']
         labels={
             'rut': 'ingrese el rut del empleado',
             'nombre':'ingrese el nombre del empleado',
             'apellido':'ingrese el apellido del empleado',
             'email':'ingrese el email del empleado',
             'telefono':'ingrese el telefono del empleado',
-            'cargo':'ingrese el cargo del empleado'
+            'cargo':'ingrese el cargo del empleado',
+            'sueldo':'ingrese el sueldo del empleado'
         }
         widgets={
             'rut': forms.TextInput(
@@ -20,7 +21,7 @@ class form_Empleados(forms.ModelForm):
                     'class': 'controls',
                     'id': 'rut',
                     'name': 'rut',
-                    'placeholder': '123342-1'
+                    'placeholder': '14.233.342-1'
                 }
             ),    
             'nombre': forms.TextInput(
@@ -36,7 +37,7 @@ class form_Empleados(forms.ModelForm):
                     'class': 'controls',
                     'name': 'apellido',
                     'id': 'apellido',
-                    'placeholder': 'Manielito '
+                    'placeholder': 'Perez'
                 }
             ),
             'email': forms.TextInput(
@@ -44,7 +45,7 @@ class form_Empleados(forms.ModelForm):
                     'class': 'controls',
                     'name': 'email',
                     'id': 'email',
-                    'placeholder': 'Manielito@gmail.com '
+                    'placeholder': 'JosePerez@gmail.com '
                 }
             ),
             'telefono': forms.TextInput(
@@ -52,7 +53,7 @@ class form_Empleados(forms.ModelForm):
                     'class': 'controls',
                     'id': 'telefono',
                     'name': 'telefono',
-                    'placeholder': '123131'
+                    'placeholder': '+56912345678'
                 }
 
             ),
@@ -64,6 +65,16 @@ class form_Empleados(forms.ModelForm):
                     'placeholder': 'Jefe de bodega'
                 }
             ),
+
+            'sueldo': forms.TextInput(
+                attrs={
+                    'class': 'controls',
+                    'id': 'sueldo',
+                    'name': 'sueldo',
+                    'placeholder': '$700.000'
+                }
+            ),
+            
 
 
 

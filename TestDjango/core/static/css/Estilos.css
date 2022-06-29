@@ -19,6 +19,7 @@ h1{
     color: #000000;
 }
 
+
 .row{
 	display: flex;
 	flex-wrap: wrap;
@@ -353,3 +354,4 @@ p {
     background:#1e96fc;
     color:white;
 }
+
