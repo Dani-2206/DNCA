@@ -1,10 +1,10 @@
 
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.views.generic.edit import FormView
-from django.contrib.auth import login,logout
+from django.contrib.auth import login,logout,authenticate
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import never_cache
 from django.views.decorators.csrf import csrf_protect
@@ -54,11 +54,30 @@ class ListadoUsuario(LoginRequiredMixin,superusuario,ListView):
 
 
 
-class crearusuario(CreateView):
-    model = Usuario
-    form_class= Formulario
-    template_name = 'registro.html'
-    success_url = reverse_lazy('login')
+def crearusuario(request):
+    data ={
+        'form':Formulario()
+    } 
+    if request.method == 'POST':
+        formulario = Formulario(data = request.POST)
+        if formulario.is_valid():
+
+            formulario.save()
+            username=formulario.cleaned_data.get("username")
+            password= formulario.cleaned_data.get("password1")
+            
+            account= authenticate(username=username,password= password)
+
+            login(request,account)
+            
+
+
+            return redirect(to="index")
+        else:
+            data["form"] = formulario
+
+
+    return render(request , 'registro.html',data)
 
 
 

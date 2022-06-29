@@ -90,7 +90,7 @@ DATABASES={
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'personas',
         'USER': 'root',
-        'PASSWORD':'',
+        'PASSWORD':'123',
         'HOST': 'localhost',
         'PORT': '3306'
 
@@ -136,7 +136,7 @@ AUTH_USER_MODEL= 'usuarios.Usuario'
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-es'
 
 TIME_ZONE = 'UTC'
 
